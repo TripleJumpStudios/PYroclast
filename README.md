@@ -1,4 +1,4 @@
 # PYroclast
-Configuration Manager for VKBasalt.
+Configuration Manager for vkBasalt.
 
-Being designed as a manager for the .config files needed for VKBasalt, a Vulkan post-processing program similar to reshade.
+An appimage based manager for the .config files needed for [vkBasalt](https://github.com/DadSchoorse/vkBasalt), a Vulkan post-processing layer similar to reshade.
