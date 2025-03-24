@@ -124,7 +124,7 @@ PYroclast modifies only the directories and files that you explicitly configure 
 It's continuing the joke: vulkan post processing → after vulcan → basalt → pyroclast 
 
 <img src="https://raw.githubusercontent.com/TripleJumpStudios/PYroclast/f56ac72672bc6656973f1c27382510cc9de0d358/icon.png" alt="PYroclast Icon" width="25" /> 
-#extras and thoughts
-#vkmark is a vulkan benchmark tool
-#GOverlay is pretty much a must or want
+# extras and thoughts
+# vkmark is a vulkan benchmark tool
+# GOverlay is pretty much a must or want
 #build out links to great .fx files and LUT files
