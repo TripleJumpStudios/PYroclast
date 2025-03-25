@@ -157,6 +157,9 @@ PYroclast ships with a helper script that automates installing or uninstalling v
     - Copy and paste the terminal/logs and send them to me if there are any problems.
     - If you have questions, suggestions, or issues, feel free to [open an issue](https://github.com/TripleJumpStudios/PYroclast/issues) or email me at [TripleJumpStudios@proton.me](mailto:TripleJumpStudios@proton.me)
 
+## Preview
+<img src="https://github.com/TripleJumpStudios/PYroclast/blob/d796e3b77df59a5ff75202e91dc1fdadd59204ee/PYroclast_screenshot.png" alt="PYroclast Icon" width="300" />
+
 ## Reminders
 
 - Set a custom keybind to toggle vkBasalt on or off. The default is `HOME`.
@@ -186,4 +189,4 @@ It continues the joke: Vulkan post-processing → after Vulkan → basalt → py
 # GOverlay is recommended for monitoring vkBasalt
 # Build out links to great .fx files and LUT files as needed
 -->
-Added new sections for installer script and tested distros that it works on.
+
