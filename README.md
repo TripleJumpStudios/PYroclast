@@ -102,6 +102,47 @@
 7. **Launch & Manage**  
    - Once everything is set up, your system is ready to apply vkBasalt post-processing whenever you launch a Vulkan application.
    - If you want to change the vkBasalt.conf LUT files, custom shaders, or other settings later, PYroclast will prompt you to make a backup file to `~/pyroclast/backupfiles/` or overwrite where you are saving it to.
+  
+## Installer Script (v1.1_Installer.py)
+
+PYroclast ships with a helper script that automates installing or uninstalling vkBasalt, creates the needed directories, and optionally downloading shaders/textures:
+
+1. **Automatic Distribution Detection**  
+   - The script reads `/etc/os-release` to identify whether your system is Debian/Ubuntu, Fedora, Arch, Void, Solus, or openSUSE.
+
+2. **Package Manager Integration**  
+   - Once it knows your distro, the script installs vkBasalt from the appropriate repository:
+     - **Debian/Ubuntu**: `apt-get`
+     - **Fedora**: `dnf`
+     - **Arch**: `pacman` first; if it fails, tries an AUR helper (e.g., `yay` or `paru`)
+         -**note** currently there is no offical package for vkBasalt on Arch.
+     - **Void**: `xbps-install`
+     - **Solus**: `eopkg`
+     - **openSUSE**: `zypper`
+         -**note** still untested, but the functionality is built it.
+   - **Arch-Specific Check**: If no C compiler is found on Arch-based systems, the script aborts and instructs you to install `base-devel`.
+
+3. **Optional Shaders and Textures**  
+   - If you approve, the script downloads ReShade shader and texture files from [GitHub](https://github.com/crosire/reshade-shaders/tree/slim) and places them into `~/pyroclast/shaders/` and `~/pyroclast/textures/`.
+       -**note** this is currently set to the slim branch.
+   - This step is entirely optional—you can skip it by typing “N” when prompted.
+
+4. **Directory Creation**  
+   - The script automatically sets up:
+     - `~/.config/vkBasalt/` for the main `vkBasalt.conf`
+     - `~/pyroclast/` as the main folder for PYroclast data
+     - `~/pyroclast/backupfiles/` for storing backups of any `vkBasalt.conf` file you already had
+     - `~/pyroclast/shaders/` and `~/pyroclast/lut/` for your future expansions
+
+5. **Uninstall Mode**  
+   - Running `./v1.1_Installer.py --uninstall` attempts to remove vkBasalt using the same package manager logic.
+   - If you installed vkBasalt manually or from outside the script’s recognized sources, it may not detect or remove it fully.
+
+6. **Advanced Usage**  
+   - **`--custom-path /my/custom/path`**: Lets you specify a custom location to look for vkBasalt files.  
+   - **`--aur-helper <yay|paru>`**: Sets which AUR helper to use on Arch if `pacman` doesn’t find vkBasalt.  
+   - **`--slow`**: Adds a delay after each log message (useful for debugging or demonstrations).
+
 
 ## Reminders
 - Set a custom keybind to toggle vkBasalt on/off. The default is `HOME`
